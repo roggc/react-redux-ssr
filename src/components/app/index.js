@@ -3,7 +3,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-const comp= ()=>
+const comp= (props)=>
 {
   const render=
   (

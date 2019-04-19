@@ -4,7 +4,7 @@ import {createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from '../reducers/index';
 
-const middleWares = [thunk];
+const middlewares = [thunk];
 export const createStoreWithMiddleware= applyMiddleware(...middlewares)(createStore);
 
 let _store;

@@ -3,7 +3,7 @@
 import {combineReducers} from 'redux';
 import * as types from '../actions/types';
 
-const messageReducer= (val= "hello world", act) =>
+const messageReducer= (val= "hello world ...", act) =>
 {
   let newVal;
   switch(act.type)
