@@ -4,7 +4,7 @@ var path = require('path')
 var webpack = require('webpack')
 var nodeExternals = require('webpack-node-externals')
 
-var browserConfig = {
+var clientConfig = {
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: 'bundle.js',
@@ -24,7 +24,7 @@ var browserConfig = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      __isBrowser__: "true"
+      __isClient__: "true"
     })
   ],
   watchOptions: {
@@ -59,7 +59,7 @@ var serverConfig = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      __isBrowser__: "false"
+      __isClient__: "false"
     })
   ],
   watchOptions: {
@@ -71,4 +71,4 @@ var serverConfig = {
   }
 }
 
-module.exports = [browserConfig, serverConfig]
+module.exports = [clientConfig, serverConfig]
