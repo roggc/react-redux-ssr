@@ -14,7 +14,7 @@ const renderFullPage= (html, state)=> {
   <!doctype html>
   <html>
     <head>
-      <title>Redux Universal Example</title>
+      <title>react-redux-ssr</title>
     </head>
     <body>
       <div id="root">${html}</div>
