@@ -9,7 +9,7 @@ import App from './components/app/index';
 hidrate
 (
   <Provider store={store}>
-    <App />
+    <App/>
   </Provider>,
   document.getElementById('root')
 );
