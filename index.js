@@ -57,4 +57,4 @@ const port = process.env.PORT || 3000;
 app.use('/public', express.static('public'));
 app.use(handleRender);
 app.listen(port)
-console.log(`listening on ${port}...`);
+console.log(`listening on localhost:${port} ...`);

@@ -10,9 +10,9 @@ export const createStoreWithMiddleware= applyMiddleware(...middlewares)(createSt
 let _store;
 if(__isClient__)
 {
-  const _state = window.__STATE__;
+  const state = window.__STATE__;
   delete window.__STATE__;
-  _store= createStoreWithMiddleware(rootReducer, _state);
+  _store= createStoreWithMiddleware(rootReducer, state);
 }
 
 export const store = _store;
