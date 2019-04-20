@@ -1,4 +1,4 @@
-# reactReduxSSR
+## react-redux-ssr setup development kit
 
 for production purposes only you run **npm i --production** and then **npm run build** and you are ready to deploy/publish.
 
