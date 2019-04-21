@@ -6,6 +6,6 @@ you do **npm i --production** if you don't want to develop. but because this is 
 
 you do **npm run dev** to develop.
 
-you do **npm run build** and **npm run start** when you want to run the app locally.
+you do **npm run build** and **npm run start** when you want to run the app.
 
 this app has been deployed to **heroku** and can be accessed through https://react-redux-ssr.herokuapp.com.
