@@ -7,8 +7,8 @@ module.exports =
   entry:'./src/client.js',
   output:
   {
-    path: path.join(__dirname, 'public'),
-    filename: 'bundle.js'
+    path: path.join(__dirname, 'out/client'),
+    filename: 'client.js'
   },
   module:
   {

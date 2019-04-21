@@ -1,4 +1,3 @@
 node_modules
-public
-dist
+out
 package-lock.json

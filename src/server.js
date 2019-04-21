@@ -23,7 +23,7 @@ const renderFullPage= (html, state)=> {
         // http://redux.js.org/recipes/ServerRendering.html#security-considerations
         window.__STATE__ = ${JSON.stringify(state).replace(/</g,'\\u003c')}
       </script>
-      <script src="/public/bundle.js"></script>
+      <script src="/out/client.js"></script>
     </body>
   </html>
   `
@@ -54,7 +54,7 @@ const handleRender= (req, res)=> {
 
 const app = express();
 const port = process.env.PORT || 3000;
-app.use('/public', express.static('public'));
+app.use('/out', express.static('out/client'));
 app.use(handleRender);
 app.listen(port);
 console.log(`listening on localhost:${port} ...`);

@@ -10,8 +10,8 @@ module.exports=
   entry: './src/server.js',
   output:
   {
-    path: path.join(__dirname,'dist'),
-    filename: 'index.js'
+    path: path.join(__dirname,'out/server'),
+    filename: 'server.js'
   },
   module:
   {

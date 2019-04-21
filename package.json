@@ -11,7 +11,7 @@
     "nodemon": "npx nodemon --exec \"babel-node --inspect\" ./src/server.js",
     "dev": "npm run wbclient-dev & npm run nodemon",
     "build": "npm run wbserver & npm run wbclient",
-    "start": "node dist/index.js"
+    "start": "node out/server/server.js"
   },
   "author": "rgc",
   "license": "ISC",
