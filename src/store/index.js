@@ -19,14 +19,10 @@ export const getStore= (conf= {isClient:false}, state)=>
   }
   else
   {
+    store= applyMiddleware(...middlewares)(createStore)(rootReducer, state);
     if(state)
     {
-      store= applyMiddleware(...middlewares)(createStore)(rootReducer, state);
       store.dispatch(environmentSet({isClient:false}));
-    }
-    else
-    {
-      store= applyMiddleware(...middlewares)(createStore)(rootReducer);
     }
   }
   return store;
