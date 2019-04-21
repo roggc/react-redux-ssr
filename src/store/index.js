@@ -3,24 +3,31 @@ console.log('src/store/index');
 import {createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from '../reducers/index';
+import {environmentSet} from '../actions/index'
 
 const middlewares = [thunk];
-export const createStoreWithMiddleware= applyMiddleware(...middlewares)(createStore);
-export const getStoreIfItsClient= (object)=>
+
+export const getStore= (conf= {isClient:false}, state)=>
 {
-    let store=null;
-    if(object.isClient)
+  let store;
+  if(conf.isClient)
+  {
+    const _state = window.__STATE__;
+    delete window.__STATE__;
+    store= applyMiddleware(...middlewares)(createStore)(rootReducer, _state);
+    store.dispatch(environmentSet({isClient:true}));
+  }
+  else
+  {
+    if(state)
     {
-      try
-      {
-        const state = window.__STATE__;
-        delete window.__STATE__;
-        store= createStoreWithMiddleware(rootReducer, state);
-      }
-      catch
-      {
-        return store;
-      }
+      store= applyMiddleware(...middlewares)(createStore)(rootReducer, state);
+      store.dispatch(environmentSet({isClient:false}));
     }
-    return store;
+    else
+    {
+      store= applyMiddleware(...middlewares)(createStore)(rootReducer);
+    }
+  }
+  return store;
 };

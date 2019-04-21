@@ -5,8 +5,7 @@ import express from 'express';
 import React from 'react';
 import {renderToString} from 'react-dom/server';
 import {Provider} from 'react-redux';
-import {createStoreWithMiddleware} from './store/index';
-import rootReducer from './reducers/index';
+import {getStore} from './store/index';
 import App from './components/app/index';
 
 const renderFullPage= (html, state)=> {
@@ -30,24 +29,14 @@ const renderFullPage= (html, state)=> {
 };
 
 const handleRender= (req, res)=> {
-  let _store;
-  if(req.query.state)
-  {
-    const state= JSON.parse(req.query.state);
-    _store= createStoreWithMiddleware(rootReducer, state);
-  }
-  else
-  {
-    _store= createStoreWithMiddleware(rootReducer);
-  }
-  const store= _store;
+  const store= getStore();
+  const state= store.getState();
+
   const html = renderToString(
     <Provider store={store}>
       <App />
     </Provider>
   );
-
-  const state= store.getState();
 
   res.send(renderFullPage(html, state));
 };

@@ -11,3 +11,13 @@ export const messageSet=(val)=>
   };
   return act;
 };
+
+export const environmentSet=(val)=>
+{
+  const act=
+  {
+    type: types.ENVIRONMENT_SET,
+    val: val
+  };
+  return act;
+};
