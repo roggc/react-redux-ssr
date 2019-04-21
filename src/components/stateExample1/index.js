@@ -1,4 +1,4 @@
-//index.js
+console.log('src/components/stateExample1/index');
 
 import React from 'react';
 import {connect} from 'react-redux';

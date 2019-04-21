@@ -1,4 +1,4 @@
-//index.js
+console.log('src/actions/index');
 
 import * as types from './types';
 

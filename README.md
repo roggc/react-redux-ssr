@@ -1,13 +1,11 @@
 ## react-redux-ssr setup development kit
 
-this is a minimum bare setup for development and production of **react-redux-ssr** projects ready to be published/deployed on **nodejs** hosting services.
+this is a minimum bare setup for development of **react-redux-ssr** projects ready to be published/deployed on **nodejs** hosting services.
 
-for production purposes only you run **npm i --production** and then **npm run build** and you are ready to deploy/publish.
+you do **npm i --production** if you don't want to develop. but because this is not the case, you do **npm i** instead.
 
-for developing you run **npm i** and then **npm run build** and then **npm run dev** and you are ready to develop. when you finish developing you run **npm run build**.
+after that you do **npm run dev** to develop.
 
-the reason for the first **npm run build** in development it is for having the output folders from **webpack** made. if we don't do that and run **npm run dev** straight ahead the first time it will crash because **nodemon** will not find those folders.
-
-if that happens there is no problem, you run again **npm run dev** and the second time will not crash because the output folders (**dist** and **public**) will be there (with its respective files).
+when you want to publish/deploy you do **npm run build** first.
 
 the build of this project has been published to **heroku** and can be accessed (the site) through https://react-redux-ssr.herokuapp.com.

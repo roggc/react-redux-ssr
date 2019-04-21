@@ -1,4 +1,4 @@
-//index.js
+console.log('index');
 
 import path from 'path';
 import express from 'express';

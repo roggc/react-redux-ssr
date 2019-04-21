@@ -1,4 +1,4 @@
-//index.js
+console.log('src/reducers/index');
 
 import {combineReducers} from 'redux';
 import * as types from '../actions/types';

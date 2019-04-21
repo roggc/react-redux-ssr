@@ -1,15 +1,16 @@
 {
-  "name": "testreact1ssr",
+  "name": "react-redux-ssr",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack-dev": "npx webpack -w --mode development",
-    "webpack-prod": "npx webpack --mode production",
-    "nodemon": "npx nodemon -w public -w dist --inspect dist/index.js",
-    "dev": "npm run webpack-dev & npm run nodemon",
-    "build": "npm run webpack-prod",
+    "wbserver": "npx webpack --mode production --config wbserver.config.js",
+    "wbclient": "npx webpack --mode production --config wbclient.config.js",
+    "wbclient-dev": "npx webpack -w --mode development --config wbclient.config.js",
+    "nodemon": "npx nodemon --exec \"babel-node --inspect\" index.js",
+    "dev": "npm run wbclient-dev & npm run nodemon",
+    "build": "npm run wbserver & npm run wbclient",
     "start": "node dist/index.js"
   },
   "author": "rgc",
@@ -31,6 +32,7 @@
     "webpack-node-externals": "^1.7.2"
   },
   "devDependencies": {
+    "@babel/node": "^7.2.2",
     "nodemon": "^1.18.11"
   }
 }
