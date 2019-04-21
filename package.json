@@ -8,7 +8,7 @@
     "wbserver": "npx webpack --mode production --config wbserver.config.js",
     "wbclient": "npx webpack --mode production --config wbclient.config.js",
     "wbclient-dev": "npx webpack -w --mode development --config wbclient.config.js",
-    "nodemon": "npx nodemon --exec \"babel-node --inspect\" index.js",
+    "nodemon": "npx nodemon --exec \"babel-node --inspect\" ./src/server.js",
     "dev": "npm run wbclient-dev & npm run nodemon",
     "build": "npm run wbserver & npm run wbclient",
     "start": "node dist/index.js"

@@ -4,12 +4,16 @@ var path = require('path');
 
 module.exports =
 {
-  output: {
-    path: path.resolve(__dirname, 'public'),
+  entry:'./src/client.js',
+  output:
+  {
+    path: path.join(__dirname, 'public'),
     filename: 'bundle.js'
   },
-  module: {
-    rules: [
+  module:
+  {
+    rules:
+    [
       {
         test: /\.(js)$/,
         exclude: /node_modules/,
@@ -19,11 +23,12 @@ module.exports =
       },
     ]
   },
-  watchOptions: {
+  watchOptions:
+  {
     ignored:
     [
-      path.resolve(__dirname, 'public'),
-      path.resolve(__dirname, 'node_modules')
+      path.join(__dirname, 'public'),
+      path.join(__dirname, 'node_modules')
     ]
   }
 };

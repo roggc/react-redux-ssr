@@ -1,13 +1,13 @@
-console.log('index');
+console.log('src/server');
 
 import path from 'path';
 import express from 'express';
 import React from 'react';
 import {renderToString} from 'react-dom/server';
 import {Provider} from 'react-redux';
-import {createStoreWithMiddleware} from './src/store/index';
-import rootReducer from './src/reducers/index';
-import App from './src/components/app/index';
+import {createStoreWithMiddleware} from './store/index';
+import rootReducer from './reducers/index';
+import App from './components/app/index';
 
 const renderFullPage= (html, state)=> {
   return `
