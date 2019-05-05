@@ -8,4 +8,4 @@ you do **npm run dev** to develop.
 
 you do **npm run build** and **npm run start** when you want to run the app.
 
-this app has been deployed to **heroku** and can be accessed through https://react-redux-ssr.herokuapp.com.
+the next steps of this app are *react-redux-ssr-state* and *react-redux-pro*. the final repo is *rr-ssr*.
